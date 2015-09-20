@@ -63,6 +63,13 @@ set imap_keepalive = 900
 set ssl_starttls=yes
 set ssl_force_tls=yes
 ```
+A word of caution is that, because this is stored in
+plain-text in your home directory, I highly recommend making
+a new Gmail account just for this purpose.  In the event
+your server gets compromised, you don't lose your main email
+account with your personal information too.
+
+Or you could encrypt it on your machine like [so](https://pthree.org/2012/01/07/encrypted-mutt-imap-smtp-passwords/)
 
 Set it as a cron job for automation:
 ```
