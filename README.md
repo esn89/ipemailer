@@ -1,5 +1,5 @@
 # ipemailer
-A script/tool that notifies you via email (with the address of the new IP) if your dynamic IP changes.
+A tiny but handy script that notifies you via email (with the address of the new IP) if your dynamic IP changes.
 
 <img src="https://i.imgur.com/jw7WLdd.png">
 
@@ -30,14 +30,13 @@ git clone git@github.com:esn89/ipemailer.git
 
 Get packages:
 ```
-apt-get install libsasl2-modules-gssapi-mit gnutls-bin
-openssl mutt
+apt-get install libsasl2-modules-gssapi-mit gnutls-bin openssl mutt
 ```
 
 Place the script in your $PATH for execution, I prefer
 /usr/local/bin
 ```
-cd ipemail
+cd ipemailer
 cp ipscript /usr/local/bin/
 ```
 
@@ -74,7 +73,7 @@ add this line:
 0 5 * * * /usr/local/bin/ipscript
 ```
 This has the script run every day at 5am that way, the
-longest I go without my server, worst case is a day.
+longest I go without SSH-ing into my server, worst case is a day.
 
 ## Problems I have ran into:
 
