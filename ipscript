@@ -1,0 +1,27 @@
+#!/bin/bash
+
+publicip=`curl -s ifconfig.me`
+
+# Checks to see if there is a file which contains my current IP:
+if [[ -e /tmp/currentip ]]
+then
+	currentip=$(cat /tmp/currentip)
+
+	# Checks to see if my 'newly grabbed' public IP matches:
+	if [[ $publicip != $currentip ]]
+	then
+		# First, write it to /tmp/currentip
+		echo $publicip  > /tmp/currentip
+		# Email me, to notify me of my new IP so I can use it.
+		mutt -s "Your new IP is: " youremail@gmail.com < /tmp/currentip
+	fi
+
+# else we don't have such a file one, let's make one:
+# This is for the case where your server restarts due to
+# expected reasons or what not.
+# More often than not, the /tmp folder may get cleared.
+else
+	touch /tmp/currentip
+	echo $publicip > /tmp/currentip
+	mutt -s "Your new IP is: " youremail@gmail.com < /tmp/currentip
+fi
