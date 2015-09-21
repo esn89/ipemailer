@@ -1,6 +1,6 @@
 #!/bin/bash
 
-publicip=`dig +short myip.opendns.com @resolver1.opendns.com`
+publicip=$(dig +short myip.opendns.com @resolver1.opendns.com)
 
 # Checks to see if there is a file which contains my current IP:
 if [[ -e /tmp/currentip ]]

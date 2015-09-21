@@ -19,6 +19,7 @@ to the lease time being up or the modem restarted due to power outage(s).
 + gnutls-bin
 + openssl
 + libsasl2-modules-gssapi-mit
++ dnsutils
 + a Gmail account
 
 ### Installation:
@@ -30,7 +31,7 @@ git clone git@github.com:esn89/ipemailer.git
 
 Get packages:
 ```
-apt-get install libsasl2-modules-gssapi-mit gnutls-bin openssl mutt
+apt-get install libsasl2-modules-gssapi-mit gnutls-bin openssl mutt dnsutils
 ```
 
 Place the script in your $PATH for execution, I prefer
